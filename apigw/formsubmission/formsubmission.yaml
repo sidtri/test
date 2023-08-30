@@ -1,0 +1,33 @@
+apigwRoute:
+    - createdAt: "2023-08-29T16:49:25+05:30"
+      enabled: true
+      endpoint: /form/{id}/submission
+      group: 0
+      handle: formsubmission
+      id: 352454353803596021
+      meta:
+        debug: false
+        async: false
+        relnamespace: sample
+      method: GET
+      filters:
+        - createdAt: "2023-08-30T10:54:44+05:30"
+          enabled: true
+          id: 352563605155135477
+          kind: processer
+          params:
+            workflow: samp
+          ref: workflow
+          route: formsubmission
+          weight: 0
+        - createdAt: "2023-08-30T10:54:56+05:30"
+          enabled: true
+          id: 352563623677181941
+          kind: postfilter
+          params:
+            input:
+                expr: res
+                type: Any
+          ref: response
+          route: formsubmission
+          weight: 0
